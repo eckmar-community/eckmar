@@ -1,7 +1,7 @@
 # Nomiac
 Scalable, feature-rich cryptocurrency marketplace using Laravel
 
-Some software required is constantly updated and changed so you should always look for up-to-date version of software online.
+Some required oftware is constantly updated and changed so you should always look for up-to-date version of software online.
 You do not need to follow this tutorial. You can host Nomiac on whatever server or system you want as long as your server meets the requiremnets.
 
 # Server requirements
