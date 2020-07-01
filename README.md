@@ -1,5 +1,5 @@
 # Nomiac
-Scalable, feature-rich cryptocurrency marketplace using Laravel
+Scalable, feature-rich cryptocurrency marketplace on Laravel
 
 # Server requirements
 VPS with at least 2GB of RAM
