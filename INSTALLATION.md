@@ -1,3 +1,6 @@
+Some required software is constantly updated and changed so you should always look for up-to-date version of software online.
+You do not need to follow this tutorial. You can host Nomiac on whatever server or system you want as long as your server meets the requiremnets.
+
 # Installation
 
 This is not a copy-paste tutorial. Most of this will be simple copy-paste commands that you enter in your VPS. I'm writing this tutorial based on Ubuntu 18.04
