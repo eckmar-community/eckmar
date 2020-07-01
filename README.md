@@ -1,5 +1,5 @@
 # Nomiac
-Scalable, feature-rich cryptocurrency marketplace on Laravel
+Scalable, cryptocurrency-friendly marketplace on Laravel
 
 # Server requirements
 ```
