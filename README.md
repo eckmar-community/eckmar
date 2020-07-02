@@ -1,6 +1,8 @@
 # Nomiac
 Scalable, cryptocurrency-friendly marketplace on Laravel
 
+https://github.com/virtumonde/nomiac/blob/master/INSTALLATION.md
+
 # Server requirements
 ```
 VPS with at least 2GB of RAM
