@@ -1,5 +1,5 @@
 # Nomiac
-Scalable, cryptocurrency-friendly marketplace on Laravel
+Cryptocurrency-friendly marketplace on Laravel
 
 https://github.com/virtumonde/nomiac/blob/master/INSTALLATION.md
 
