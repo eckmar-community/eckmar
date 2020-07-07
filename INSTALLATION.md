@@ -106,7 +106,7 @@ The command should give same path as before as output.
 
 Now that java is installed, we can proceed with installation of Elasticsearch.
 ```
-wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/d eb/elasticsearch/2.3.1/elasticsearch-2.3.1.deb
+wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.3.1/elasticsearch-2.3.1.deb
 ```
 (Above code is single command)
 
