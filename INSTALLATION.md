@@ -87,24 +87,15 @@ sudo apt update
 ```
 Install Java:
 ```
-sudo apt install oracle-java8-installer
+sudo apt-get install openjdk-8-jdk
 ```
-To see if Java is installed correctly run:
-```
-sudo update-alternatives --config java
-```
-Exit out of the command. You should see the path similar to this: `/usr/lib/jvm/java-8- oracle/jre/bin/java`
 Now we need to use that path and create environment variable:
 ```
-sudo nano /etc/environment
+echo "JAVA_HOME=$(which java)" | sudo tee -a /etc/environment
 ```
-
-At the bottom of the file add:
-JAVA_HOME="/usr/lib/jvm/java-8-oracle/jre/bin/java"
 ```
-(Based on path above, if yours is different change it here)
+source /etc/environment
 ```
-In order for changes to take effect we need to reload environment file
 ```
 source /etc/environment
 ```
