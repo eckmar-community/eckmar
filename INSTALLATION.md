@@ -96,9 +96,6 @@ echo "JAVA_HOME=$(which java)" | sudo tee -a /etc/environment
 ```
 source /etc/environment
 ```
-```
-source /etc/environment
-```
 To check if everything is working enter:
 ```
 echo $JAVA_HOME
