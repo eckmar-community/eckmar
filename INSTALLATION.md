@@ -295,7 +295,9 @@ After everything above is done, change current directory to the directory name y
 ```
 composer install
 ```
+```
 npm install
+```
 ```
 npm run prod
 ```
