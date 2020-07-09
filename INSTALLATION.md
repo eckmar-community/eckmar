@@ -68,7 +68,7 @@ sudo systemctl restart php7.2-fpm
 
 Now we need to install some PHP extensions that are required by Marketplace as well as composer and unzip tools.
 ```
-sudo apt-get install php7.2-mbstring php7.2-xml php7.2-xmlrpc php7.2-gmp php7.2- curl php7.2-gd composer unzip -y
+sudo apt-get install php7.2-mbstring php7.2-xml php7.2-xmlrpc php7.2-gmp php7.2-curl php7.2-gd composer unzip -y
 ```
 (Above code is single command)
 
