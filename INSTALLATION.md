@@ -216,7 +216,8 @@ Now we need to copy the files to the server. Make new directory inside /var/www 
 After files are copied we need to give them permissions.
 Run theese commands based on your file path:
 ```
-sudo chown -R www-data:www-data /var/www/`nomiac`/public
+sudo chown -R www-data:www-data /var/www/nomiac/public
+```
 ```
 sudo chmod 755 /var/www
 ```
