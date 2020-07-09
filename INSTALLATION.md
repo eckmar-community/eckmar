@@ -239,13 +239,13 @@ sudo mkdir /var/www/`nomiac`/storage/public/products
 
 And give it permissions
 ```
-sudo chmod -R 755 /var/www/`nomiac`/storage/public/products
+sudo chmod -R 755 ./storage/public/products
 ```
 ```
-sudo chgrp -R www-data storage/storage/public/products
+sudo chgrp -R www-data ./storage/public/products
 ```
 ```
-sudo chmod -R ug+rwx storage/storage/public/products
+sudo chmod -R ug+rwx .storage/public/products
 ```
 (Above code are 3 commands)
 
