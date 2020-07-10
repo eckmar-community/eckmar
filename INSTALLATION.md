@@ -77,10 +77,6 @@ sudo apt-get install php7.2-mbstring php7.2-xml php7.2-xmlrpc php7.2-gmp php7.2-
 Marketplace uses Elasticsearch software that provices great search speeds and flexibility. Elasticsearch requires Java in order to run.
 
 # Oracle JDK
-Add repository to apt:
-```
-sudo add-apt-repository ppa:webupd8team/java
-```
 Update apt
 ```
 sudo apt update
