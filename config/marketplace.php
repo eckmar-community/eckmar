@@ -31,7 +31,7 @@ return [
     /**
      * Amount of USD that needs to be paid to the market in order to become vendor
      */
-    'vendor_fee' => env('VENDOR_FEE', 100),
+    'vendor_fee' => env('VENDOR_FEE', 1),
 
     /**
      * After how many negative feedback should vendor get "Deal with caution tag"
