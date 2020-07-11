@@ -16,7 +16,7 @@
                 <ul class="navbar-nav mr-auto">
                     @admin
                     <li class="nav-item @isroute('admin') active @endisroute">
-                        <a class="nav-link" href="{{ route('admin.index') }}">Admin panel</a>
+                        <a class="nav-link" href="{{ route('admin.index') }}">Admin Panel</a>
                     </li>
                     @endadmin
                     @moderator
