@@ -9,20 +9,6 @@
     <div class="row">
         <div class="col-md-3 col-sm-12" style="margin-top:2.3em">
             @include('includes.categories')
-            <div class="row mt-3">
-                <div class="col">
-                    <div class="card ">
-                        <div class="card-header">
-                            Official Mirrors
-                        </div>
-                        <div class="card-body text-center">
-                            @foreach(config('marketplace.mirrors') as $mirror)
-                                <a href="{{$mirror}}" style="text-decoration:none;">{{$mirror}}</a>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="col-md-9 col-sm-12 mt-3 ">
 
