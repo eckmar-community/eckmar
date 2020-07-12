@@ -347,7 +347,7 @@ try_files $uri =404;
 fastcgi_split_path_info ^(.+\.php)(/.+)$;
 fastcgi_pass unix:/run/php/php7.2-fpm.sock;
 fastcgi_index index.php;
-fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name; include fastc$
+fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name; include fastcgi_params;
 } }
 ```
 After you change the parameters to reflect your environment run:
