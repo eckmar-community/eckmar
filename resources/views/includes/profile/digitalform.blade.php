@@ -26,7 +26,7 @@
         <label class="form-check-label" for="autodelivery">
             Automatic delivery
         </label>
-        <p class="text-muted">If it is checked, the quantity of this product will be the number of lines in the product content.</p>
+        <p class="text-muted">If it is checked, the products will be delivered automatically. The quantity of this product will correspond to the number of lines in the product content.</p>
     </div>
 
     <div class="form-check mx-2 mb-2 ">
@@ -35,7 +35,7 @@
         <label class="form-check-label" for="autodelivery">
             Unlimited
         </label>
-        <p class="text-muted">If this is checked, the product is unlimited.</p>
+        <p class="text-muted">If this is checked, the product is unlimited. This is applicable for eBooks and similar products.</p>
     </div>
 
     <div class="form-row justify-content-center">
