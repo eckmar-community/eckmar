@@ -110,10 +110,10 @@ mysql -u root -p
 CREATE DATABASE marketplace DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 ```
 ```
-CREATE USER 'peralta'@'localhost' IDENTIFIED BY 'CHANGE_THIS_PASSWORD';
+CREATE USER 'INSERT_YOUR_USERNAME'@'localhost' IDENTIFIED BY 'INSERT_YOUR_PASSWORD';
 ```
 ```
-GRANT ALL PRIVILEGES ON * . * TO 'peralta'@'localhost';
+GRANT ALL PRIVILEGES ON * . * TO 'INSERT_YOUR_USERNAME'@'localhost';
 ```
 ```
 FLUSH PRIVILEGES;
