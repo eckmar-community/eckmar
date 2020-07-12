@@ -212,7 +212,7 @@
                 <div class="card-body">
                     <h6>
                         <i class="fas fa-shield-alt"></i>
-                        Shop with confidence
+                        Shop with Confidence
                     </h6>
                     <div class="text-muted">
                         You are Escrow protected for each product in the market!
