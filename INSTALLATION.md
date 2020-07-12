@@ -296,18 +296,19 @@ sudo chmod -R 755 /var/www/peralta/storage
 
 Make this folder: (used for product pictures):
 ```
+sudo mkdir /var/www/peralta/storage/public/
 sudo mkdir /var/www/peralta/storage/public/products
 ```
 
 And give it permissions
 ```
-sudo chmod -R 755 ./storage/public/products
+sudo chmod -R 755 /var/www/peralta/storage/public/products
 ```
 ```
-sudo chgrp -R www-data ./storage/public/products
+sudo chgrp -R www-data /var/www/peralta/storage/public/products
 ```
 ```
-sudo chmod -R ug+rwx ./storage/public/products
+sudo chmod -R ug+rwx /var/www/peralta/storage/public/products
 ```
 (Above code are 3 commands)
 
@@ -317,14 +318,14 @@ Nginx is installed but we didn't point it towards marketplace. To edit nginx con
 ```
 sudo nano /etc/nginx/sites-available/default
 ```
-I won't explain what most of the stuff does, so here is an example of configured file:
+I won't explain what most of the stuff does, so here is an example of configured file. Delete everything and paste this:
 ```
 server {
         listen 80;
         listen [::]:80;
-            listen 443;
+        listen 443;
         listen [::]:443;
-root /var/www/market/public;
+root /var/www/peralta/public;
 index index.php index.html index.htm index.nginx-debian.html;
 server_name domain.com;
 location / {
@@ -335,7 +336,7 @@ try_files $uri =404;
 fastcgi_split_path_info ^(.+\.php)(/.+)$;
 fastcgi_pass unix:/run/php/php7.2-fpm.sock;
 fastcgi_index index.php;
-fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name; include fastcgi_params;
+fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name; include fastc$
 } }
 ```
 After you change the parameters to reflect your environment run:
@@ -367,7 +368,6 @@ cp .env.example .env
 ```
 php artisan key:generate
 ```
-(Above code are 4 commands)
 Then open your .env file and insert database connection details:
 ```
 sudo nano .env
@@ -404,6 +404,11 @@ Now, run this to link public directory with storage:
 
 ```
 php artisan storage:link
+```
+
+Restart Nginx:
+```
+sudo service nginx restart
 ```
 
 Your basic marketplace is working now, `Congratulations !`
