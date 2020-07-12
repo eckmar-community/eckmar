@@ -30,12 +30,12 @@
     </div>
 
     <div class="form-check mx-2 mb-2 ">
-        <input class="form-check-input" type="checkbox" value="1" name="unlimited" id="unlimited"
+        <input class="form-check-input" type="checkbox" value="1" name="limited" id="limited"
             {{ $digitalProduct -> autodelivery == true ? 'checked' : '' }}>
-        <label class="form-check-label" for="autodelivery">
-            Unlimited
+        <label class="form-check-label" for="limited">
+            Limited
         </label>
-        <p class="text-muted">If this is checked, the product is unlimited. This is applicable for eBooks and similar products.</p>
+        <p class="text-muted">If this is checked, the product is limited. This is applicable for single-use keys and similar products.</p>
     </div>
 
     <div class="form-row justify-content-center">
