@@ -365,6 +365,9 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 
 After everything above is done, change current directory to the directory name you previously chose (I used **peralta**) and run series of commands to install all required dependencies:
 ```
+cd /var/www/peralta
+```
+```
 composer install
 ```
 ```
