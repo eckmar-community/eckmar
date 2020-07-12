@@ -29,6 +29,14 @@
         <p class="text-muted">If it is checked, the quantity of this product will be the number of lines in the product content.</p>
     </div>
 
+    <div class="form-check mx-2 mb-2 ">
+        <input class="form-check-input" type="checkbox" value="1" name="unlimited" id="unlimited"
+            {{ $digitalProduct -> autodelivery == true ? 'checked' : '' }}>
+        <label class="form-check-label" for="autodelivery">
+            Unlimited
+        </label>
+        <p class="text-muted">If this is checked, the product is unlimited.</p>
+    </div>
 
     <div class="form-row justify-content-center">
         <div class="form-group col-md-3 text-center">
