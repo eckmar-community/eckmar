@@ -110,6 +110,15 @@ mysql -u root -p
 CREATE DATABASE marketplace DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 ```
 ```
+CREATE USER 'peralta'@'localhost' IDENTIFIED BY 'CHANGE_THIS_PASSWORD';
+```
+```
+GRANT ALL PRIVILEGES ON * . * TO 'peralta'@'localhost';
+```
+```
+FLUSH PRIVILEGES;
+```
+```
 exit
 ```
 If afterwards in the installation process you are not able to connect to the MySQL database because of authentication problems, change the root password: https://support.rackspace.com/how-to/mysql-resetting-a-lost-mysql-root-password/
