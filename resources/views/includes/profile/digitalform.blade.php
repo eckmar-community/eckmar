@@ -10,9 +10,9 @@
         <label for="product_content">Product's content:</label>
         <textarea name="product_content" id="product_content"
             class="form-control @error('content', $errors) is-invalid @enderror" rows="5"
-            placeholder="The link to the product (we strongly recommend to host your products on MEGA)">{{ $digitalProduct -> content }}</textarea>
+            placeholder="The link to the product (we strongly recommend to host your products on MEGA) or any information unit associated with your product, such as a key">{{ $digitalProduct -> content }}</textarea>
         <p class="text-muted">Check if you want to use automatic delivery. If the product is limited, each
-            link or informational unit should be put in a separated line.</p>
+            link or informational unit (such as a key) should be placed in a separated line.</p>
         @error('product_content', $errors)
         <div class="invalid-feedback d-block text-center">
             {{ $errors -> first('product_content') }}
