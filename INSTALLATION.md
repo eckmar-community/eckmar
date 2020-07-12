@@ -190,9 +190,7 @@ Now we need to start it up.
 ```
 sudo systemctl start elasticsearch
 ```
-```
 Give it 10-15 seconds from last command, and then run:
-```
 ```
 curl -X GET "localhost:9200"
 ```
