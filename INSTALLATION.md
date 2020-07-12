@@ -304,6 +304,18 @@ sudo chmod -R 755 /var/www/peralta/bootstrap/cache
 ```
 sudo chmod -R 755 /var/www/peralta/storage
 ```
+```
+sudo chown -R $USER:www-data /var/www/peralta/storage
+```
+```
+sudo chown -R $USER:www-data /var/www/peralta/bootstrap/cache
+```
+```
+sudo chmod -R 775 /var/www/peralta/storage
+```
+```
+sudo chmod -R 775 /var/www/peralta/bootstrap/cache
+```
 
 Make this folder: (used for product pictures):
 ```
