@@ -1,5 +1,5 @@
 Some required software is constantly updated and changed so you should always look for up-to-date version of software online.
-You do not need to follow this tutorial. You can host Nomiac on whatever server or system you want as long as your server meets the requiremnets.
+You do not need to follow this tutorial. You can host **Peralta** on whatever server or system you want as long as your server meets the requiremnets.
 
 # Installation
 
@@ -10,7 +10,7 @@ sudo apt-get update
 ```
 
 # Nginx
-You can use any web server you want (Apache etc.) but I will use Nginx. To install it run:
+You can use any web server you want (Apache for example) but I will use Nginx. To install it run:
 ```
 sudo apt-get install nginx
 ```
@@ -205,7 +205,7 @@ npm -v
 (Above code are 2 commands)
 # Files
 
-Now we need to copy the files to the server. Make new directory inside /var/www and put all files there. You can call it whatever you want. I will call it `nomiac`.
+Now we need to copy the files to the server. Make new directory inside /var/www and put all files there. You can call it whatever you want. I will call it `peralta`.
 
 # Permissions
 
@@ -218,10 +218,10 @@ sudo chown -R www-data:www-data /var/www/nomiac/public
 sudo chmod 755 /var/www
 ```
 ```
-sudo chmod -R 755 /var/www/`nomiac`/bootstrap/cache
+sudo chmod -R 755 /var/www/peralta/bootstrap/cache
 ```
 ```
-sudo chmod -R 755 /var/www/`nomiac`/storage
+sudo chmod -R 755 /var/www/peralta/storage
 ```
 
 Now, run this to link public directory with storage.:
@@ -232,7 +232,7 @@ php artisan storage:link
 
 Make this folder: (used for product pictures):
 ```
-sudo mkdir /var/www/`nomiac`/storage/public/products
+sudo mkdir /var/www/peralta/storage/public/products
 ```
 
 And give it permissions
@@ -287,7 +287,7 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 
 # Installation
 
-After everything above is done, change current directory to the directory name you previously chose (I used `nomiac`) and run series of commands to install all required dependencies:
+After everything above is done, change current directory to the directory name you previously chose (I used **peralta**) and run series of commands to install all required dependencies:
 ```
 composer install
 ```
