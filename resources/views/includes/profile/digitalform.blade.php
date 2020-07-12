@@ -22,7 +22,7 @@
 
     <div class="form-check mx-2 mb-2 ">
         <input class="form-check-input" type="checkbox" value="1" name="limited" id="limited"
-            {{ $digitalProduct -> autodelivery == true ? 'checked' : '' }}>
+            {{ $digitalProduct -> limited == true ? 'checked' : '' }}>
         <label class="form-check-label" for="limited">
             Limited
         </label>
@@ -30,10 +30,10 @@
     </div>
 
     <div class="form-check mx-2 mb-2 ">
-        <input class="form-check-input" type="checkbox" value="1" name="autodelivery" id="autodelivery"
-            {{ $digitalProduct -> autodelivery == true ? 'checked' : '' }}>
-        <label class="form-check-label" for="autodelivery">
-            Automatic delivery
+        <input class="form-check-input" type="checkbox" value="1" name="manualdelivery" id="manualdelivery"
+            {{ $digitalProduct -> manualdelivery == true ? 'checked' : '' }}>
+        <label class="form-check-label" for="manualdelivery">
+            Manual delivery
         </label>
         <p class="text-muted">If it is checked, the products will be delivered automatically. If the product is limited, the quantity of this product will correspond to the number of lines in the product content.</p>
     </div>
