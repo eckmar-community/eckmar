@@ -46,7 +46,7 @@ In the admin panel you can create categories, respond to vendor applications, di
 
 # Server requirements
 ```
-VPS with at least 2GB of RAM
+VPS with at least 256MB of RAM
 Daemon for each coin that is enabled on marketplace
 ```
 # Software Requirements
