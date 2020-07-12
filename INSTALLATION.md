@@ -112,8 +112,7 @@ CREATE DATABASE marketplace DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 ```
 exit
 ```
-(above code are 3 separate commands)
-
+If afterwards in the installation process you are not able to connect to the MySQL database because of authentication problems, change the root password: https://support.rackspace.com/how-to/mysql-resetting-a-lost-mysql-root-password/
 # PHP
 We need to install PHP (PHP-FPM) to run our code:
 ```
