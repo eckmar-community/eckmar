@@ -281,7 +281,6 @@ git clone https://github.com/nomiac-mobile/peralta.git
 # Permissions
 
 After files are copied we need to give them permissions.
-Run theese commands based on your file path:
 ```
 sudo chown -R www-data:www-data /var/www/peralta/public
 ```
@@ -293,12 +292,6 @@ sudo chmod -R 755 /var/www/peralta/bootstrap/cache
 ```
 ```
 sudo chmod -R 755 /var/www/peralta/storage
-```
-
-Now, run this to link public directory with storage.:
-
-```
-php artisan storage:link
 ```
 
 Make this folder: (used for product pictures):
@@ -405,6 +398,12 @@ php artisan db:seed
 If both commands ran fine, your connection to database is configured fine. If you want to get rid of dummy data, run:
 ```
 php artisan migrate:fresh
+```
+
+Now, run this to link public directory with storage:
+
+```
+php artisan storage:link
 ```
 
 Your basic marketplace is working now, `Congratulations !`
