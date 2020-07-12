@@ -274,7 +274,10 @@ npm -v
 (Above code are 2 commands)
 # Files
 
-Now we need to copy the files to the server. Go to /var/www and then:
+Now we need to copy the files to the server.
+```
+cd /var/www/
+```
 ```
 git clone https://github.com/nomiac-mobile/peralta.git
 ```
