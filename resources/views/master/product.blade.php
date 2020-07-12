@@ -206,7 +206,7 @@
             </div>
         </div>
 
-        {{-- Shop with confidence --}}
+        {{-- Shop with Confidence --}}
         <div class="col-md-3">
             <div class="card mb-2">
                 <div class="card-body">
