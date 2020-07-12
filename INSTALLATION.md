@@ -389,8 +389,8 @@ DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=marketplace
-DB_USERNAME=root
-DB_PASSWORD=password
+DB_USERNAME=peralta
+DB_PASSWORD=CHANGE_THIS_PASSWORD
 ```
 If you did install redis, change driver from sync to redis:
 ```
