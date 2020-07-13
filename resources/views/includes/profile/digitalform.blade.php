@@ -26,7 +26,8 @@
         <label class="form-check-label" for="limited">
             Limited
         </label>
-        <p class="text-muted">If this is checked, the product is limited. This is applicable for single-use keys and similar products.</p>
+        <p class="text-muted">If this is checked, the product is limited. This is applicable for single-use keys and
+            similar products.</p>
     </div>
 
     <div class="form-check mx-2 mb-2 ">
@@ -35,7 +36,8 @@
         <label class="form-check-label" for="manualdelivery">
             Manual delivery
         </label>
-        <p class="text-muted">If it is checked, the products will be delivered automatically. If the product is limited, the quantity of this product will correspond to the number of lines in the product content.</p>
+        <p class="text-muted">If it is checked, the products will be delivered automatically. If the product is limited,
+            the quantity of this product will correspond to the number of lines in the product content.</p>
     </div>
 
 
