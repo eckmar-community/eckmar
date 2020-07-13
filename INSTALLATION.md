@@ -21,13 +21,13 @@ The user you are logged in as must have sudo privileges to be able to activate s
 Start by creating a file which will be used for swap:
 
 ```
-sudo fallocate -l 1G /swapfile
+sudo fallocate -l 2G /swapfile
 ```
 
 If fallocate is not installed or you get an error message saying fallocate failed: Operation not supported then use the following command to create the swap file:
 
 ```
-sudo dd if=/dev/zero of=/swapfile bs=1024 count=1048576
+sudo dd if=/dev/zero of=/swapfile bs=2048 count=1048576
 ```
 Only the root user should be able to write and read the swap file. Set the correct permissions by typing:
 
@@ -61,15 +61,7 @@ sudo swapon --show
 ```
 ```
 NAME      TYPE  SIZE   USED PRIO
-/swapfile file 1024M 507.4M   -1
-```
-```
-sudo free -h
-```
-```
-              total        used        free      shared  buff/cache   available
-Mem:           488M        158M         83M        2.3M        246M        217M
-Swap:          1.0G        506M        517M
+/swapfile file 2048M 507.4M   -1
 ```
 
 # Installation
