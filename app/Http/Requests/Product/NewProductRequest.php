@@ -35,13 +35,13 @@ class NewProductRequest extends FormRequest
     public function persist()
     {
         // doesnt have basic product details
-        if(!session() -> has('product_adding'))
+        if (!session() -> has('product_adding'))
             throw new RedirectException('You didn\'t define basic product details!', route('profile.vendor.product.add'));
         // doesnt have offers
-        if(!session() -> has('product_offers') ||  optional(session('product_offers')) -> isEmpty() || empty(session('product_offers')))
+        if (!session() -> has('product_offers') ||  optional(session('product_offers')) -> isEmpty() || empty(session('product_offers')))
             throw new RedirectException('You don\'t have your offers specified!', route('profile.vendor.product.offers'));
         // physcical product
-        if(session('product_type') == 'physical'){
+        if (session('product_type') == 'physical'){
             // doesnt have shipping
             if(!session() -> has('product_shippings') || empty(session('product_shippings')))
                 throw new RedirectException('You must have at least one shipping specified!', route('profile.vendor.product.delivery'));
@@ -50,12 +50,12 @@ class NewProductRequest extends FormRequest
                 throw new RedirectException('You must have shipping details set!', route('profile.vendor.product.delivery'));
         }
         // digital product
-        else{
+        else {
             if(!session() -> has('product_details'))
                 throw new RedirectException('You must have digital details set!', route('profile.vendor.product.digital'));
         }
         // doesnt have images
-        if(!session() -> has('product_images') || empty(session('product_images')))
+        if (!session() -> has('product_images') || empty(session('product_images')))
             throw new RedirectException('You must have at least one image added!', route('profile.vendor.product.images'));
 
         $baseProduct = session() -> get('product_adding');
