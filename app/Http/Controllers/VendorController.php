@@ -138,7 +138,7 @@ class VendorController extends Controller
         } catch (\Exception $e){
             session() -> flash('errormessage', 'Something went wrong, try again!');
         }
-
+        
         return redirect() -> back();
     }
 
@@ -311,7 +311,7 @@ class VendorController extends Controller
             session() -> flash('errormessage', $e -> getMessage());
         }
 
-        /* return redirect() -> back(); */
+        return redirect() -> back();
     }
 
     /**
