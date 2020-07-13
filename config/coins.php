@@ -122,10 +122,13 @@ return [
         'dash' => [
             'yQgr9ix7L7JuA5NeZdj3yux7sNXCX3H843'
         ],
+        'xmr' => [
+            'yQgr9ix7L7JuA5NeZdj3yux7sNXCX3H843'
+        ],
         'stb' => [
             'marketSTB',
             'market2STB'
-        ]
+        ],
     ],
 
 
