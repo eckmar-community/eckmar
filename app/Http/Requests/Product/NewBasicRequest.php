@@ -86,7 +86,7 @@ class NewBasicRequest extends FormRequest
         // put in session
         session()->put('product_adding', $editingProduct);
 
-        return redirect()->route('profile.vendor.product.add');
+        return redirect()->route('profile.vendor.product.offers');
 
     }
 }
