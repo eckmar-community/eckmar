@@ -72,6 +72,6 @@ class NewDigitalRequest extends FormRequest
 
 
         session() -> put('product_details', $digitalProduct);
-        return redirect() -> route('profile.vendor.product.images');
+        return redirect() -> route('profile.vendor.product.add');
     }
 }
