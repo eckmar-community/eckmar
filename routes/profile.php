@@ -30,21 +30,25 @@ Route::prefix('profile')->group(function(){
     // Vendor routes
     Route::get('vendor', 'VendorController@vendor') -> name('profile.vendor');
     Route::post('vendor/update/profile','VendorController@updateVendorProfilePost')-> name('profile.vendor.update.post');
+    
+    // Digital Options
+    Route::get('vendor/product/digital/add', 'VendorController@addDigitalShow') -> name('profile.vendor.product.digital');
+    Route::post('vendor/product/digital/add/{product?}', 'VendorController@addDigital') -> name('profile.vendor.product.digital.post');
+
     // Product add basic info
     Route::get('vendor/product/add/{type?}', 'VendorController@addBasicShow') -> name('profile.vendor.product.add');
     Route::post('vendor/product/adding/{product?}', 'VendorController@addShow') -> name('profile.vendor.product.add.post');
+    
     // Add remove offers
     Route::get('vendor/product/offers/add', 'VendorController@addOffersShow') -> name('profile.vendor.product.offers');
     Route::post('vendor/product/offers/new/{product?}', 'VendorController@addOffer') -> name('profile.vendor.product.offers.add'); // add offer
     Route::get('vendor/product/offers/remove/{quantity}/{product?}', 'VendorController@removeOffer') -> name('profile.vendor.product.offers.remove'); // add offer
+    
     // Delivery
     Route::get('vendor/product/delivery/add', 'VendorController@addDeliveryShow') -> name('profile.vendor.product.delivery');
     Route::post('vendor/product/delivery/add/{product?}', 'VendorController@newShipping') -> name('profile.vendor.product.delivery.new');
     Route::post('vendor/product/delivery/options/{product?}', 'VendorController@newShippingOption') -> name('profile.vendor.product.delivery.options');
     Route::get('vendor/product/delivery/remove/{index}/{product?}', 'VendorController@removeShipping') -> name('profile.vendor.product.delivery.remove');
-    // digital section
-    Route::get('vendor/product/digital/add', 'VendorController@addDigitalShow') -> name('profile.vendor.product.digital');
-    Route::post('vendor/product/digital/add/{product?}', 'VendorController@addDigital') -> name('profile.vendor.product.digital.post');
 
     // Images section
     Route::get('vendor/product/images/add', 'VendorController@addImagesShow') -> name('profile.vendor.product.images');
@@ -54,6 +58,7 @@ Route::prefix('profile')->group(function(){
 
     // New product
     Route::post('vendor/product/post', 'VendorController@newProduct') -> name('profile.vendor.product.post');
+    
     // Delete product
     Route::get('vendor/product/{id}/delete/confirmation', 'VendorController@confirmProductRemove') -> name('profile.vendor.product.remove.confirm');
     Route::get('vendor/product/{id}/delete', 'VendorController@removeProduct') -> name('profile.vendor.product.remove');
