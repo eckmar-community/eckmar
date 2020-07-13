@@ -1,5 +1,76 @@
 Some required software is constantly updated and changed so you should always look for up-to-date version of software online.
-You do not need to follow this tutorial. You can host Nomiac on whatever server or system you want as long as your server meets the requiremnets.
+You do not need to follow this tutorial. You can host **Peralta** on whatever server or system you want as long as your server meets the requiremnets.
+
+# If your VPS doesn't have 2GB of RAM
+
+If this is the case, you can use your disk memory as RAM using swap. Before continuing with this tutorial, check if your Ubuntu installation already has swap enabled by typing:
+```
+sudo swapon --show
+```
+If the output is empty, it means that your system does not have swap space enabled.
+Otherwise, if you get something like below, you already have swap enabled on your machine.
+
+```
+NAME      TYPE      SIZE USED PRIO
+/dev/sda2 partition 1.9G   0B   -2
+```
+Although possible, it is not common to have multiple swap spaces on a single machine.
+
+The user you are logged in as must have sudo privileges to be able to activate swap. In this example, we will add 1G swap. If you want to add more swap, replace 1G with the size of the swap space you need. Perform the steps below to add swap space on Ubuntu 18.04 LTS.
+
+Start by creating a file which will be used for swap:
+
+```
+sudo fallocate -l 1G /swapfile
+```
+
+If fallocate is not installed or you get an error message saying fallocate failed: Operation not supported then use the following command to create the swap file:
+
+```
+sudo dd if=/dev/zero of=/swapfile bs=1024 count=1048576
+```
+Only the root user should be able to write and read the swap file. Set the correct permissions by typing:
+
+```
+sudo chmod 600 /swapfile
+```
+
+Use the `mkswap` utility to set up a Linux swap area on the file:
+
+```
+sudo mkswap /swapfile
+```
+Activate the swap file using the following command:
+
+```
+sudo swapon /swapfile
+```
+To make the change permanent open the `/etc/fstab` file:
+```
+sudo nano /etc/fstab
+```
+and paste the following line:
+```
+/swapfile swap swap defaults 0 0
+```
+
+Verify that the swap is active by using either the swapon or the free command, as shown below:
+
+```
+sudo swapon --show
+```
+```
+NAME      TYPE  SIZE   USED PRIO
+/swapfile file 1024M 507.4M   -1
+```
+```
+sudo free -h
+```
+```
+              total        used        free      shared  buff/cache   available
+Mem:           488M        158M         83M        2.3M        246M        217M
+Swap:          1.0G        506M        517M
+```
 
 # Installation
 
@@ -10,7 +81,7 @@ sudo apt-get update
 ```
 
 # Nginx
-You can use any web server you want (Apache etc.) but I will use Nginx. To install it run:
+You can use any web server you want (Apache for example) but I will use Nginx. To install it run:
 ```
 sudo apt-get install nginx
 ```
@@ -39,10 +110,18 @@ mysql -u root -p
 CREATE DATABASE marketplace DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 ```
 ```
+CREATE USER 'INSERT_YOUR_USERNAME'@'localhost' IDENTIFIED BY 'INSERT_YOUR_PASSWORD';
+```
+```
+GRANT ALL PRIVILEGES ON * . * TO 'INSERT_YOUR_USERNAME'@'localhost';
+```
+```
+FLUSH PRIVILEGES;
+```
+```
 exit
 ```
-(above code are 3 separate commands)
-
+If afterwards in the installation process you are not able to connect to the MySQL database because of authentication problems, change the root password: https://support.rackspace.com/how-to/mysql-resetting-a-lost-mysql-root-password/
 # PHP
 We need to install PHP (PHP-FPM) to run our code:
 ```
@@ -119,9 +198,7 @@ Now we need to start it up.
 ```
 sudo systemctl start elasticsearch
 ```
-```
 Give it 10-15 seconds from last command, and then run:
-```
 ```
 curl -X GET "localhost:9200"
 ```
@@ -205,45 +282,56 @@ npm -v
 (Above code are 2 commands)
 # Files
 
-Now we need to copy the files to the server. Make new directory inside /var/www and put all files there. You can call it whatever you want. I will call it `nomiac`.
-
+Now we need to copy the files to the server.
+```
+cd /var/www/
+```
+```
+git clone https://github.com/nomiac-mobile/peralta.git
+```
 # Permissions
 
 After files are copied we need to give them permissions.
-Run theese commands based on your file path:
 ```
-sudo chown -R www-data:www-data /var/www/nomiac/public
+sudo chown -R www-data:www-data /var/www/peralta/public
 ```
 ```
 sudo chmod 755 /var/www
 ```
 ```
-sudo chmod -R 755 /var/www/`nomiac`/bootstrap/cache
+sudo chmod -R 755 /var/www/peralta/bootstrap/cache
 ```
 ```
-sudo chmod -R 755 /var/www/`nomiac`/storage
+sudo chmod -R 755 /var/www/peralta/storage
 ```
-
-Now, run this to link public directory with storage.:
-
 ```
-php artisan storage:link
+sudo chown -R $USER:www-data /var/www/peralta/storage
+```
+```
+sudo chown -R $USER:www-data /var/www/peralta/bootstrap/cache
+```
+```
+sudo chmod -R 775 /var/www/peralta/storage
+```
+```
+sudo chmod -R 775 /var/www/peralta/bootstrap/cache
 ```
 
 Make this folder: (used for product pictures):
 ```
-sudo mkdir /var/www/`nomiac`/storage/public/products
+sudo mkdir /var/www/peralta/storage/public/
+sudo mkdir /var/www/peralta/storage/public/products
 ```
 
 And give it permissions
 ```
-sudo chmod -R 755 ./storage/public/products
+sudo chmod -R 755 /var/www/peralta/storage/public/products
 ```
 ```
-sudo chgrp -R www-data ./storage/public/products
+sudo chgrp -R www-data /var/www/peralta/storage/public/products
 ```
 ```
-sudo chmod -R ug+rwx ./storage/public/products
+sudo chmod -R ug+rwx /var/www/peralta/storage/public/products
 ```
 (Above code are 3 commands)
 
@@ -253,14 +341,14 @@ Nginx is installed but we didn't point it towards marketplace. To edit nginx con
 ```
 sudo nano /etc/nginx/sites-available/default
 ```
-I won't explain what most of the stuff does, so here is an example of configured file:
+I won't explain what most of the stuff does, so here is an example of configured file. Delete everything and paste this:
 ```
 server {
         listen 80;
         listen [::]:80;
-            listen 443;
+        listen 443;
         listen [::]:443;
-root /var/www/market/public;
+root /var/www/peralta/public;
 index index.php index.html index.htm index.nginx-debian.html;
 server_name domain.com;
 location / {
@@ -287,7 +375,10 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 
 # Installation
 
-After everything above is done, change current directory to the directory name you previously chose (I used `nomiac`) and run series of commands to install all required dependencies:
+After everything above is done, change current directory to the directory name you previously chose (I used **peralta**) and run series of commands to install all required dependencies:
+```
+cd /var/www/peralta
+```
 ```
 composer install
 ```
@@ -303,7 +394,6 @@ cp .env.example .env
 ```
 php artisan key:generate
 ```
-(Above code are 4 commands)
 Then open your .env file and insert database connection details:
 ```
 sudo nano .env
@@ -314,8 +404,8 @@ DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=marketplace
-DB_USERNAME=root
-DB_PASSWORD=password
+DB_USERNAME=INSERT_YOUR_USERNAME
+DB_PASSWORD=INSERT_YOUR_PASSWORD
 ```
 If you did install redis, change driver from sync to redis:
 ```
@@ -334,6 +424,17 @@ php artisan db:seed
 If both commands ran fine, your connection to database is configured fine. If you want to get rid of dummy data, run:
 ```
 php artisan migrate:fresh
+```
+
+Now, run this to link public directory with storage:
+
+```
+php artisan storage:link
+```
+
+Restart Nginx:
+```
+sudo service nginx restart
 ```
 
 Your basic marketplace is working now, `Congratulations !`
