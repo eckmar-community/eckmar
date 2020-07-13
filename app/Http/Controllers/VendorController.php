@@ -113,7 +113,6 @@ class VendorController extends Controller
      */
     public function addOffersShow()
     {
-
         return view('profile.vendor.addoffers',
             [
                 'productsOffers' => session('product_offers'),
@@ -131,18 +130,15 @@ class VendorController extends Controller
     {
         $this -> authorizeEditOrCreate($product);
 
-        try{
+        try {
             $request -> persist($product);
             session() -> flash('success', 'You have added new offer!');
-        }
-        catch (RequestException $e){
+        } catch (RequestException $e){
             session() -> flash('errormessage', $e -> getMessage());
-        }
-        catch (\Exception $e){
+        } catch (\Exception $e){
             session() -> flash('errormessage', 'Something went wrong, try again!');
         }
-
-
+        
         return redirect() -> back();
     }
 
