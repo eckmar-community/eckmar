@@ -36,7 +36,7 @@
                         {{ $errors -> first('newpgp') }}
                     </div>
                     @enderror
-                    <p class="text-muted">Paste your key here and later you'll need to confirm.</p>
+                    <p class="text-muted">Paste your public PGP key here and later you'll need to confirm.</p>
                 </div>
                 <div class="form-group text-center">
                     <button class="btn btn-outline-success" type="submit">Add PGP</button>
