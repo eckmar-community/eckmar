@@ -309,10 +309,9 @@ class VendorController extends Controller
     {
         $this -> authorizeEditOrCreate(optional($product) -> product);
 
-        try{
+        try {
             return $request -> persist($product);
-        }
-        catch (RequestException $e){
+        } catch (RequestException $e) {
             session() -> flash('errormessage', $e -> getMessage());
         }
 
@@ -326,7 +325,6 @@ class VendorController extends Controller
      */
     public function addImagesShow()
     {
-
         return view('profile.vendor.addimages',
             [
                 'basicProduct' => null,
@@ -344,11 +342,10 @@ class VendorController extends Controller
     {
         $this -> authorizeEditOrCreate($product);
 
-        try{
+        try {
             $request -> persist($product);
             session() -> flash('success', 'You have added new image!');
-        }
-        catch (RequestException $e){
+        } catch (RequestException $e) {
             session() -> flash('errormessage', $e -> getMessage());
         }
 
@@ -544,6 +541,17 @@ class VendorController extends Controller
 
         // string to view map to retrive which view
         $sectionMap = [
+            'delivery' =>
+            view('profile.vendor.adddelivery', [
+                'productsShipping' => $myProduct -> isPhysical() ? $myProduct -> specificProduct() -> shippings() -> get() : null,
+                'physicalProduct' => $myProduct -> specificProduct(),
+                'basicProduct' => $myProduct,
+            ]),
+            'digital' =>
+            view('profile.vendor.adddigital', [
+                'digitalProduct' => $myProduct -> specificProduct(),
+                'basicProduct' => $myProduct,
+            ]),
             'basic' =>
                 view('profile.vendor.addbasic',
                     [
@@ -561,19 +569,7 @@ class VendorController extends Controller
                     [
                         'basicProduct' => $myProduct,
                         'productsImages' => $myProduct -> images() -> get(),
-                    ]),
-            'delivery' =>
-                view('profile.vendor.adddelivery', [
-                    'productsShipping' => $myProduct -> isPhysical() ? $myProduct -> specificProduct() -> shippings() -> get() : null,
-                    'physicalProduct' => $myProduct -> specificProduct(),
-                    'basicProduct' => $myProduct,
-                ]),
-            'digital' =>
-                view('profile.vendor.adddigital', [
-                    'digitalProduct' => $myProduct -> specificProduct(),
-                    'basicProduct' => $myProduct,
-                ]),
-
+                    ])
         ];
 
         // if the section is not allowed strings

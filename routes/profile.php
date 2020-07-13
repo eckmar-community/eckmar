@@ -31,7 +31,7 @@ Route::prefix('profile')->group(function(){
     Route::get('vendor', 'VendorController@vendor') -> name('profile.vendor');
     Route::post('vendor/update/profile','VendorController@updateVendorProfilePost')-> name('profile.vendor.update.post');
     
-    // Digital Options
+    // Digital options
     Route::get('vendor/product/digital/add', 'VendorController@addDigitalShow') -> name('profile.vendor.product.digital');
     Route::post('vendor/product/digital/add/{product?}', 'VendorController@addDigital') -> name('profile.vendor.product.digital.post');
 

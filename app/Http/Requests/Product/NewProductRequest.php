@@ -116,6 +116,5 @@ class NewProductRequest extends FormRequest
         session() -> forget('product_images');
         session() -> forget('product_shippings');
         session() -> forget('product_details');
-
     }
 }
