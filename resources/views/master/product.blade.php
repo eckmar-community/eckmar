@@ -171,15 +171,15 @@
                             </td>
                             @endif
                             <td class="row">
-                                @if(!$product -> isUnlimited())
                                 <div class="col-md-5">
+                                    @if(!$product -> isUnlimited())
                                     <input type="number" min="1" name="amount" id="amount"
                                            value="1"
                                            max="{{ $product -> quantity }}"
                                            class="@if($errors -> has('amount')) is-invalid @endif form-control form-control-sm"
                                            placeholder="Amount of {{ str_plural($product -> mesure) }}"/>
+                                    @endif
                                 </div>
-                                @endif
                                 <div class="col-md-7">
                                     <button class="btn btn-sm btn-block mb-2 btn-primary"><i class="fas fa-plus mr-2"></i>Add to
                                         cart
