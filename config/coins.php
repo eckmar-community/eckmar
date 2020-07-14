@@ -13,12 +13,12 @@ return [
     'coin_list' => [
         'btc' => \App\Marketplace\Payment\BitcoinPayment::class,
 //        'btcm' => \App\Marketplace\Payment\BitcoinMutlisig::class, // bitcoin multisig
-        'xmr' => \App\Marketplace\Payment\MoneroPayment::class,
+//        'xmr' => \App\Marketplace\Payment\MoneroPayment::class,
         'stb' => \App\Marketplace\Payment\StubCoin::class,
 //        'pivx' => \App\Marketplace\Payment\PivxCoin::class,
-//        'ltc' => \App\Marketplace\Payment\LitecoinPayment::class,
+        'ltc' => \App\Marketplace\Payment\LitecoinPayment::class,
 //        'dash' => \App\Marketplace\Payment\DashPayment::class,
-//        'bch' => \App\Marketplace\Payment\BitcoinCashPayment::class,
+        'bch' => \App\Marketplace\Payment\BitcoinCashPayment::class,
 //        'xvg' => \App\Marketplace\Payment\VergeCoin::class,
     ],
 
