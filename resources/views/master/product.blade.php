@@ -92,12 +92,9 @@
                                 Price
                             </td>
                             <td>
-                                <ul>
-                                    @foreach($product -> offers as $offer)
-                                        <strong>@include('includes.currency', ['usdValue' => $offer -> dollars])</strong>
-                                    @endforeach
-                                </ul>
-
+                                @foreach($product -> offers as $offer)
+                                    <strong>@include('includes.currency', ['usdValue' => $offer -> dollars])</strong>
+                                @endforeach
                             </td>
                         </tr>
                         @endif
