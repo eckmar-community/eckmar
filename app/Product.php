@@ -102,7 +102,7 @@ class Product extends Model
      */
     public function updateQuantity()
     {
-        if($this -> isAutodelivery()){
+        if ($this -> isAutodelivery()){
             $this -> quantity = $this -> digital -> newQuantity();
         }
     }

@@ -69,6 +69,7 @@
                                 <strong class="badge badge-info">{{ ucfirst($product -> type) }}</strong>
                             </td>
                         </tr>
+                        @if(!$product -> isUnlimited())
                         <tr>
                             <td class="text-right text-muted">
                                 Offers
@@ -85,6 +86,21 @@
 
                             </td>
                         </tr>
+                        @else
+                        <tr>
+                            <td class="text-right text-muted">
+                                Price
+                            </td>
+                            <td>
+                                <ul>
+                                    @foreach($product -> offers as $offer)
+                                        <strong>@include('includes.currency', ['usdValue' => $offer -> dollars])</strong>
+                                    @endforeach
+                                </ul>
+
+                            </td>
+                        </tr>
+                        @endif
                         <tr>
                             <td class="text-right text-muted">
                                 Coins
