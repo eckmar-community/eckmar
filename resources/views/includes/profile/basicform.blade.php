@@ -45,11 +45,11 @@
             </div>
             @enderror
         </div>
-        <div class="form-group">
+        <div style="display:none;" class="form-group">
             <label for="rules">Payment rules:</label>
             <textarea name="rules" id="rules" class="form-control @error('rules', $errors) is-invalid @enderror"
                       rows="10"
-                      placeholder="Rules of conducting business">{{ optional($basicProduct) -> rules }}
+                      placeholder="Rules of conducting business"> No rules
             </textarea>
             <p>
                 <i class="fab fa-markdown"></i> Styling with Markdown is supported
