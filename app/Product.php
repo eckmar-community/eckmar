@@ -92,6 +92,11 @@ class Product extends Model
         return $this -> digital && $this -> digital -> autodelivery;
     }
 
+    public function isUnlimited()
+    {
+        return $this -> digital && $this -> digital -> unlimited;
+    }
+
     /**
      * Updates the quantity for autodelivery products
      */

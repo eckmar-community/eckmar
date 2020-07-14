@@ -12,7 +12,7 @@
             class="form-control @error('content', $errors) is-invalid @enderror" rows="5"
             placeholder="Details about the product">{{ $digitalProduct -> content }}</textarea>
         <p class="text-muted">Leave blank, if digital content doesn't have automatic delivery. Otherwise each
-            product put in separated lines!</p>
+            product should be put in separated lines.</p>
         @error('product_content', $errors)
         <div class="invalid-feedback d-block text-center">
             {{ $errors -> first('product_content') }}
