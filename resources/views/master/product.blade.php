@@ -192,7 +192,7 @@
                                            class="@if($errors -> has('amount')) is-invalid @endif form-control form-control-sm"
                                            placeholder="Amount of {{ str_plural($product -> mesure) }}"/>
                                     @else
-                                    <input style="display: none;" type="number" min="1" name="amount" id="amount"
+                                    <input type="number" min="1" name="amount" id="amount"
                                            value="1"
                                            max="{{ $product -> quantity }}"
                                            class="@if($errors -> has('amount')) is-invalid @endif form-control form-control-sm"
