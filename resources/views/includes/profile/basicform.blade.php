@@ -45,7 +45,7 @@
             </div>
             @enderror
         </div>
-        <div style='display: none;' class="form-group">
+        <div class="form-group">
             <label for="rules">Payment rules:</label>
             <textarea name="rules" id="rules" class="form-control @error('rules', $errors) is-invalid @enderror"
                       rows="10"
