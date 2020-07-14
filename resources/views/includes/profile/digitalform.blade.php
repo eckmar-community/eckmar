@@ -24,18 +24,18 @@
         <input class="form-check-input" type="checkbox" value="1" name="autodelivery" id="autodelivery"
             {{ $digitalProduct -> autodelivery == true ? 'checked' : '' }}>
         <label class="form-check-label" for="autodelivery">
-            Automatic delivery
+            Automatic Delivery
         </label>
-        <p class="text-muted">If checked, the quantity of this product will correspond to the number of lines in product content.</p>
+        <p class="text-muted">If checked, the product would be delivered from the number of lines in product content. Every line is a separate product.</p>
     </div>
 
     <div class="form-check mx-2 mb-2 ">
         <input class="form-check-input" type="checkbox" value="1" name="unlimited" id="unlimited"
             {{ $digitalProduct -> unlimited == true ? 'checked' : '' }}>
         <label class="form-check-label" for="unlimited">
-            Automatic delivery
+            Unlimited Product
         </label>
-        <p class="text-muted">If checked, your product will be unlimited. Please use only one line.</p>
+        <p class="text-muted">If checked, your product will be unlimited and you can sell it as many times as you want. Please use only one line.</p>
     </div>
 
     <div class="form-row justify-content-center">
