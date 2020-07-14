@@ -186,7 +186,7 @@
                             <td class="row">
                                 <div class="col-md-5">
                                     @if($product -> isUnlimited())
-                                    <input type="number" min="1" name="amount" id="amount"
+                                    <input style="display: none;" type="number" min="1" name="amount" id="amount"
                                            value="1"
                                            max="{{ $product -> quantity }}"
                                            class="@if($errors -> has('amount')) is-invalid @endif form-control form-control-sm"
