@@ -288,10 +288,6 @@
                href="{{ route('product.show', $product) }}#productsmenu">Details</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link @isroute('product.rules') active @endisroute"
-               href="{{ route('product.rules', $product) }}#productsmenu">Payment rules</a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link @isroute('product.feedback') active @endisroute"
                href="{{ route('product.feedback', $product) }}#productsmenu">Feedback</a>
         </li>
