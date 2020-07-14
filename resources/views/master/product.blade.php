@@ -194,12 +194,21 @@
                                     @endif
                                 </td>
                                 <td class="row">
+                                    @if(!$product -> isUnlimited())
                                     <div class="col-md-5">
-                                        <input @if(!$product -> isUnlimited()) style="display: none;" @endif type="number" min="1" name="amount" id="amount" value="1"
+                                        <input type="number" min="1" name="amount" id="amount" value="1"
                                             max="{{ $product -> quantity }}"
                                             class="@if($errors -> has('amount')) is-invalid @endif form-control form-control-sm"
                                             placeholder="Amount of {{ str_plural($product -> mesure) }}" />
                                     </div>
+                                    @else
+                                    <div class="col-md-5">
+                                        <input type="number" min="1" name="amount" id="amount" value="1" style="display:none;"
+                                            max="{{ $product -> quantity }}"
+                                            class="@if($errors -> has('amount')) is-invalid @endif form-control form-control-sm"
+                                            placeholder="Amount of {{ str_plural($product -> mesure) }}" />
+                                    </div>
+                                    @endif
                                     <div class="col-md-7">
                                         <button class="btn btn-sm btn-block mb-2 btn-primary"><i
                                                 class="fas fa-plus mr-2"></i>Add to
