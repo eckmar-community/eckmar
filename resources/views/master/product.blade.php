@@ -165,11 +165,11 @@
                         </tr>
                         <tr class="bg-light">
 
-                            @if(!$product -> isUnlimited())
                             <td class="text-right text-muted">
+                            @if(!$product -> isUnlimited())
                                 <label for="amount">Amount:</label>
-                            </td>
                             @endif
+                            </td>
                             <td class="row">
                                 <div class="col-md-5">
                                     @if(!$product -> isUnlimited())
