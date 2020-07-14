@@ -96,17 +96,19 @@
                             </td>
                         </tr>
                         <tr>
+                            @if(!$product -> isUnlimited())
                             <td class="text-right text-muted">Left/Sold</td>
                             <td>
                                 <span class="badge badge-light">{{ $product -> quantity }} {{ str_plural($product -> mesure, $product -> quantity) }}</span>/
                                 <span class="badge badge-light">{{ $product -> orders }} {{ str_plural($product -> mesure, $product -> orders) }} </span>
                             </td>
+                            @endif
                         </tr>
                         <tr>
                             <td colspan="2">
                                 @if($product->user->vendor->experience < 0)
                                     <p class="text-danger border border-danger rounded p-1 mt-2"><span
-                                                class="fas fa-exclamation-circle"></span> Negative experience, trade with caution !
+                                                class="fas fa-exclamation-circle"></span> Negative experience, trade with caution!
                                     </p>
                                 @endif
                             </td>
