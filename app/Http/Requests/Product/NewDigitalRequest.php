@@ -60,9 +60,9 @@ class NewDigitalRequest extends FormRequest
         $digitalProduct -> setContent($this -> product_content);
 
         // update quantity if it is autodelivery
-        if($digitalProduct -> autodelivery){
+        if ($digitalProduct -> autodelivery) {
             $baseProduct = session() -> get('product_adding');
-            if($baseProduct){
+            if ($baseProduct) {
                 // update quantity
                 $baseProduct -> quantity = $digitalProduct -> newQuantity();
                 // save it
@@ -72,6 +72,6 @@ class NewDigitalRequest extends FormRequest
 
 
         session() -> put('product_details', $digitalProduct);
-        return redirect() -> route('profile.vendor.product.add');
+        return redirect() -> route('profile.vendor.product.images');
     }
 }
