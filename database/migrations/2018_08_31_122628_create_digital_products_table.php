@@ -16,7 +16,8 @@ class CreateDigitalProductsTable extends Migration
         Schema::create('digital_products', function (Blueprint $table) {
             $table->uuid('id');
             // digital delivery field
-            $table -> boolean('autodelivery') ->default(false);
+            $table -> boolean('autodelivery') ->default(true);
+            $table -> boolean('unlimited') ->default(true);
             $table -> text('content') -> nullable(); // content for autodelivery
             $table->timestamps();
 
