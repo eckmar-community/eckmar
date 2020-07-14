@@ -27,6 +27,7 @@ class NewDigitalRequest extends FormRequest
         return [
             'product_content' => 'string|nullable',
             'autodelivery' => 'boolean|nullable',
+            'unlimited' => 'boolean|nullable',
         ];
     }
 
@@ -34,6 +35,7 @@ class NewDigitalRequest extends FormRequest
     {
         if($product && $product -> exists()){
             $product -> autodelivery = $this -> autodelivery ?? false;
+            $product -> unlimited = $this -> unlimited ?? false;
             // remove consecutive new lines and trim blank chars from start and end
             $formatedContent = trim(preg_replace("/[\r\n]{2,}/", "\n", $this -> product_content));
             $product -> content = $formatedContent;
@@ -57,6 +59,7 @@ class NewDigitalRequest extends FormRequest
 
 
         $digitalProduct -> autodelivery = $this -> autodelivery ?? false;
+        $digitalProduct -> unlimited = $this -> unlimited ?? false;
         $digitalProduct -> setContent($this -> product_content);
 
         // update quantity if it is autodelivery
