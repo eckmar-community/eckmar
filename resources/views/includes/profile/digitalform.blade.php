@@ -36,7 +36,7 @@
             Automatic delivery
         </label>
         <p class="text-muted">If checked, your product will be unlimited. Please use only one line.</p>
-    </div>\
+    </div>
 
     <div class="form-row justify-content-center">
         <div class="form-group col-md-3 text-center">
