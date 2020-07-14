@@ -11,8 +11,6 @@
         <textarea name="product_content" id="product_content"
             class="form-control @error('content', $errors) is-invalid @enderror" rows="5"
             placeholder="The link to the product (we strongly recommend to host your products on MEGA) or any information unit associated with your product, such as a key">{{ $digitalProduct -> content }}</textarea>
-        <p class="text-muted">Check if you want to use automatic delivery. If the product is limited, each
-            link or informational unit (such as a key) should be placed in a separated line.</p>
         @error('product_content', $errors)
         <div class="invalid-feedback d-block text-center">
             {{ $errors -> first('product_content') }}
@@ -27,7 +25,7 @@
             Limited
         </label>
         <p class="text-muted">If this is checked, the product is limited. This is applicable for single-use keys and
-            similar products.</p>
+            similar products. If the product is marked as limited limited, the product quantity will correspond to the number of lines in the product content.</p>
     </div>
 
     <div class="form-check mx-2 mb-2 ">
@@ -36,8 +34,7 @@
         <label class="form-check-label" for="manualdelivery">
             Manual delivery
         </label>
-        <p class="text-muted">If it is checked, the products will be delivered automatically. If the product is limited,
-            the quantity of this product will correspond to the number of lines in the product content.</p>
+        <p class="text-muted">If it is checked, the products will be delivered automatically.</p>
     </div>
 
 
