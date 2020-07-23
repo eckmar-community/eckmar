@@ -1,68 +1,66 @@
 Some required software is constantly updated and changed so you should always look for up-to-date version of software online.
 You do not need to follow this tutorial. You can host **Peralta** on whatever server or system you want as long as your server meets the requiremnets.
 
-# If your VPS doesn't have 2GB of RAM
-
+<details>
+  <summary>If your VPS doesn't have 2GB of RAM</summary>
+    
+  ```
+  
 If this is the case, you can use your disk memory as RAM using swap. Before continuing with this tutorial, check if your Ubuntu installation already has swap enabled by typing:
-```
+
 sudo swapon --show
-```
+
 If the output is empty, it means that your system does not have swap space enabled.
 Otherwise, if you get something like below, you already have swap enabled on your machine.
 
-```
+
 NAME      TYPE      SIZE USED PRIO
 /dev/sda2 partition 1.9G   0B   -2
-```
+
 Although possible, it is not common to have multiple swap spaces on a single machine.
 
 The user you are logged in as must have sudo privileges to be able to activate swap. In this example, we will add 1G swap. If you want to add more swap, replace 1G with the size of the swap space you need. Perform the steps below to add swap space on Ubuntu 18.04 LTS.
 
 Start by creating a file which will be used for swap:
 
-```
 sudo fallocate -l 2G /swapfile
-```
 
 If fallocate is not installed or you get an error message saying fallocate failed: Operation not supported then use the following command to create the swap file:
 
-```
+
 sudo dd if=/dev/zero of=/swapfile bs=2048 count=1048576
-```
+
 Only the root user should be able to write and read the swap file. Set the correct permissions by typing:
 
-```
 sudo chmod 600 /swapfile
-```
 
 Use the `mkswap` utility to set up a Linux swap area on the file:
 
-```
 sudo mkswap /swapfile
-```
+
 Activate the swap file using the following command:
 
-```
 sudo swapon /swapfile
-```
+
 To make the change permanent open the `/etc/fstab` file:
-```
+
 sudo nano /etc/fstab
-```
+
 and paste the following line:
-```
+
 /swapfile swap swap defaults 0 0
-```
+
 
 Verify that the swap is active by using either the swapon or the free command, as shown below:
 
-```
 sudo swapon --show
-```
-```
+
+
 NAME      TYPE  SIZE   USED PRIO
 /swapfile file 2048M 507.4M   -1
 ```
+  
+</details>
 
 # Installation
 
