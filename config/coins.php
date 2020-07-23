@@ -11,9 +11,9 @@ return [
      * 'stb' => Stub coin
      */
     'coin_list' => [
-//        'btc' => \App\Marketplace\Payment\BitcoinPayment::class,
+          'btc' => \App\Marketplace\Payment\BitcoinPayment::class,
 //        'btcm' => \App\Marketplace\Payment\BitcoinMutlisig::class, // bitcoin multisig
-          'xmr' => \App\Marketplace\Payment\MoneroPayment::class,
+//        'xmr' => \App\Marketplace\Payment\MoneroPayment::class,
 //        'stb' => \App\Marketplace\Payment\StubCoin::class,
 //        'pivx' => \App\Marketplace\Payment\PivxCoin::class,
 //        'ltc' => \App\Marketplace\Payment\LitecoinPayment::class,
@@ -113,8 +113,8 @@ return [
      * Market addresses, funds from fee will be sent to one random address from this array
      */
     'market_addresses' => [
-        'xmr' => [
-            '43DkmXhYm4GPo1RD559AUCiYT7HaA5C9vDbuBXiMa4jNcHQkfQqNg8dU4gUwB8Ppm2APB5D1Ub63V9o673fN9TcER1geUBj'
+        'btc' => [
+            '02a017c9869f8378303f02310b9b719e6cb6bea37f87f95d89e187546d09b22b1c'
         ],
     ],
 
