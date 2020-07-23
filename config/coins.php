@@ -11,10 +11,10 @@ return [
      * 'stb' => Stub coin
      */
     'coin_list' => [
-          'btc' => \App\Marketplace\Payment\BitcoinPayment::class,
-//        'btcm' => \App\Marketplace\Payment\BitcoinMutlisig::class, // bitcoin multisig
-//        'xmr' => \App\Marketplace\Payment\MoneroPayment::class,
-//        'stb' => \App\Marketplace\Payment\StubCoin::class,
+        'btc' => \App\Marketplace\Payment\BitcoinPayment::class,
+//       'btcm' => \App\Marketplace\Payment\BitcoinMutlisig::class, // bitcoin multisig
+        'xmr' => \App\Marketplace\Payment\MoneroPayment::class,
+        'stb' => \App\Marketplace\Payment\StubCoin::class,
 //        'pivx' => \App\Marketplace\Payment\PivxCoin::class,
 //        'ltc' => \App\Marketplace\Payment\LitecoinPayment::class,
 //        'dash' => \App\Marketplace\Payment\DashPayment::class,
@@ -113,12 +113,20 @@ return [
      * Market addresses, funds from fee will be sent to one random address from this array
      */
     'market_addresses' => [
-        'btc' => [
+        'btc' => [ // list of btc addresses
             '02a017c9869f8378303f02310b9b719e6cb6bea37f87f95d89e187546d09b22b1c'
         ],
+        'pivx' => [ // list of pivx addresses
+            'xyQ7EsNzUUBMwyihUwgQ76E2Ac7FevEcQ4'
+        ],
+        'dash' => [
+            'yQgr9ix7L7JuA5NeZdj3yux7sNXCX3H843'
+        ],
+        'stb' => [
+            'marketSTB',
+            'market2STB'
+        ]
     ],
-
-
     'multisig' => [
         'balance_api' => 'https://testnet.blockchain.info/balance?active=',
         'unspent_api' => 'https://testnet.blockchain.info/unspent?active=',
