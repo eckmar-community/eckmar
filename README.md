@@ -1,4 +1,5 @@
-# Peralta
+# Eckmar, also known as Eckmar's Marketplace Script
+
 Cryptocurrency-friendly marketplace on Laravel.
 
 ![](https://github.com/nomiac-mobile/peralta/blob/master/demo/1.png)
