@@ -1,4 +1,4 @@
-# Eckmar, also known as Eckmar's Marketplace Script
+# Eckmar (Eckmar's Marketplace Script)
 
 Cryptocurrency-friendly marketplace on Laravel.
 
