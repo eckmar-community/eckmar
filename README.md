@@ -1,7 +1,6 @@
 # Eckmar (Eckmar's Marketplace Script)
 
-Cryptocurrency-friendly marketplace on Laravel.
-Demo: https://demo.botdigit.com
+Cryptocurrency-friendly marketplace on Laravel. The demo can be accessed on https://demo.botdigit.com.
 
 ![](https://github.com/nomiac-mobile/peralta/blob/master/demo/1.png)
 
