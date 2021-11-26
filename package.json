@@ -1,7 +1,4 @@
-{
-    "private": true,
-    "scripts": 
-  
+
     "devDependencies": {
         "axios": "^0.18",
         "bootstrap": "^4.0.0",
