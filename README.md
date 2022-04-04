@@ -2,6 +2,8 @@
 
 Cryptocurrency-friendly marketplace on Laravel. The demo can be accessed on https://demo.botdigit.com.
 
+If you made any kind of improvements, please consider making a pull request.
+
 ![](https://github.com/nomiac-mobile/peralta/blob/master/demo/1.png)
 
 # Features
