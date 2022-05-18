@@ -1,5 +1,5 @@
 Some required software is constantly updated and changed so you should always look for up-to-date version of software online.
-You do not need to follow this tutorial. You can host **Peralta** on whatever server or system you want as long as your server meets the requiremnets.
+You do not need to follow this tutorial. You can host **eckmar** on whatever server or system you want as long as your server meets the requiremnets.
 
 <details>
   <summary>If your VPS doesn't have 2GB of RAM</summary>
