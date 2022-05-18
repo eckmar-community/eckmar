@@ -1,7 +1,9 @@
 # Eckmar (Eckmar's Marketplace Script)
+[![GitHub stars](https://img.shields.io/github/stars/dclipca/eckmar)](https://github.com/dclipca/eckmar/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/dclipca/eckmar)](https://github.com/dclipca/eckmar/network)
+[![GitHub issues](https://img.shields.io/github/issues/dclipca/eckmar)](https://github.com/dclipca/eckmar/issues)  
 
 Cryptocurrency-friendly marketplace on Laravel. The demo can be accessed on https://demo.botdigit.com.
-
 If you made any kind of improvements, please consider making a pull request.
 
 ![](https://github.com/nomiac-mobile/peralta/blob/master/demo/1.png)
