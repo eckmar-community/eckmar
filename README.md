@@ -25,6 +25,7 @@ Autofill system is created for users that sell many items (cd-keys for example).
 Users can send private messages to each other.
 
 **Mnemonic Password Reset**
+
 When an user registers, he receives an unique mnemonic that can be used to reset the password.
 
 **Wallet System**
