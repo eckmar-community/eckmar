@@ -64,7 +64,7 @@ NAME      TYPE  SIZE   USED PRIO
 
 # Installation
 
-This is not a copy-paste tutorial. Most of this will be simple copy-paste commands that you enter in your VPS. I'm writing this tutorial based on Ubuntu 18.04. When you first login on your VPS run:
+Most of this will be simple copy-paste commands that you enter in your VPS. I'm writing this tutorial based on Ubuntu 18.04. When you first login on your VPS run:
 ```
 sudo apt-get update
 ```
