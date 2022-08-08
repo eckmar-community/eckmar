@@ -1,5 +1,6 @@
 @extends('master.main')
 
+
 @section('title', $category -> name . ' category')
 
 @section('content')
