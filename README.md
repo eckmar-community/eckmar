@@ -8,6 +8,9 @@ If you made any kind of improvements, please consider making a pull request.
 
 ![](https://github.com/nomiac-mobile/peralta/blob/master/demo/1.png)
 
+# [Installation](https://github.com/nomiac-mobile/peralta/blob/master/INSTALLATION.md)
+# [Connecting Coins (In Progress)](https://github.com/nomiac-mobile/peralta/blob/master/CONNECTING-COINS.md)
+
 # Features
 **Vendor Accounts**
 
@@ -46,8 +49,6 @@ Products can be sold normally or as auction. You can specify end date, minimum b
 **Admin Panel**
 
 In the admin panel you can create categories, respond to vendor applications, disputes or create news.
-
-# [Installation](https://github.com/nomiac-mobile/peralta/blob/master/INSTALLATION.md)
 
 # Server requirements
 ```
