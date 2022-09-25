@@ -8,7 +8,7 @@
 Eckmar is an open-source, cryptocurrency-friendly marketplace for the dark web. Built on Laravel.
 The demo can be accessed on https://demo.botdigit.com. If you made any kind of improvements, please consider making a pull request.
 
-![](https://github.com/nomiac-mobile/peralta/blob/master/demo/marketplace.png)
+![](https://github.com/nomiac-mobile/peralta/blob/master/demo/website.png)
 
 # [Installation](https://github.com/nomiac-mobile/peralta/blob/master/INSTALLATION.md)
 # [Connecting Coins (In Progress)](https://github.com/nomiac-mobile/peralta/blob/master/CONNECTING-COINS.md)
