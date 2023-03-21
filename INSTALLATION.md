@@ -276,51 +276,51 @@ Now we need to copy the files to the server.
 cd /var/www/
 ```
 ```
-git clone https://github.com/nomiac-mobile/peralta.git
+git clone https://github.com/eckmarcommunity/eckmar.git
 ```
 # Permissions
 
 After files are copied we need to give them permissions.
 ```
-sudo chown -R www-data:www-data /var/www/peralta/public
+sudo chown -R www-data:www-data /var/www/eckmar/public
 ```
 ```
 sudo chmod 755 /var/www
 ```
 ```
-sudo chmod -R 755 /var/www/peralta/bootstrap/cache
+sudo chmod -R 755 /var/www/eckmar/bootstrap/cache
 ```
 ```
-sudo chmod -R 755 /var/www/peralta/storage
+sudo chmod -R 755 /var/www/eckmar/storage
 ```
 ```
-sudo chown -R $USER:www-data /var/www/peralta/storage
+sudo chown -R $USER:www-data /var/www/eckmar/storage
 ```
 ```
-sudo chown -R $USER:www-data /var/www/peralta/bootstrap/cache
+sudo chown -R $USER:www-data /var/www/eckmar/bootstrap/cache
 ```
 ```
-sudo chmod -R 775 /var/www/peralta/storage
+sudo chmod -R 775 /var/www/eckmar/storage
 ```
 ```
-sudo chmod -R 775 /var/www/peralta/bootstrap/cache
+sudo chmod -R 775 /var/www/eckmar/bootstrap/cache
 ```
 
 Make this folder: (used for product pictures):
 ```
-sudo mkdir /var/www/peralta/storage/public/
-sudo mkdir /var/www/peralta/storage/public/products
+sudo mkdir /var/www/eckmar/storage/public/
+sudo mkdir /var/www/eckmar/storage/public/products
 ```
 
 And give it permissions
 ```
-sudo chmod -R 755 /var/www/peralta/storage/public/products
+sudo chmod -R 755 /var/www/eckmar/storage/public/products
 ```
 ```
-sudo chgrp -R www-data /var/www/peralta/storage/public/products
+sudo chgrp -R www-data /var/www/eckmar/storage/public/products
 ```
 ```
-sudo chmod -R ug+rwx /var/www/peralta/storage/public/products
+sudo chmod -R ug+rwx /var/www/eckmar/storage/public/products
 ```
 (Above code are 3 commands)
 
@@ -337,7 +337,7 @@ server {
         listen [::]:80;
         listen 443;
         listen [::]:443;
-root /var/www/peralta/public;
+root /var/www/eckmar/public;
 index index.php index.html index.htm index.nginx-debian.html;
 server_name domain.com;
 location / {
@@ -364,9 +364,9 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 
 # Installation
 
-After everything above is done, change current directory to the directory name you previously chose (I used **peralta**) and run series of commands to install all required dependencies:
+After everything above is done, change current directory to the directory name you previously chose (I used **eckmar**) and run series of commands to install all required dependencies:
 ```
-cd /var/www/peralta
+cd /var/www/eckmar
 ```
 ```
 composer install
