@@ -1,4 +1,3 @@
-Some required software is constantly updated and changed so you should always look for up-to-date version of software online.
 You do not need to follow this tutorial. You can host **eckmar** on whatever server or system you want as long as your server meets the requiremnets.
 
 <details>
