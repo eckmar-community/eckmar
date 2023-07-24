@@ -12,7 +12,6 @@ Eckmar is an open-source, cryptocurrency-friendly marketplace for the dark web. 
 
 # [Installation](https://github.com/nomiac-mobile/peralta/blob/master/INSTALLATION.md)
 # [Connecting Coins (In Progress)](https://github.com/nomiac-mobile/peralta/blob/master/CONNECTING-COINS.md)
-for BITCOIN setup follow this process https://demo.onionsearchengine.xyz/2022/01/18/how-to-install-setup-btc-node-for-eckmar-script/
 
 # Features
 ### Vendor Accounts
