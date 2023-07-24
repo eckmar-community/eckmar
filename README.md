@@ -6,11 +6,7 @@
 
 ![](https://github.com/nomiac-mobile/peralta/blob/master/demo/eckmar-background.jpg)
 
-Eckmar is an open-source, cryptocurrency-friendly marketplace for the dark web. Built on Laravel.
-The demo can be accessed on 
-http://ojubxw4wj5qzyxlyp67xkzhtkfslr26lqjcfxxihoounv326uarkrrad.onion/ . If you made any kind of improvements, please consider making a pull request.
-if you need any other modules and extra development you can find here 
-https://demo.onionsearchengine.xyz/
+Eckmar is an open-source, cryptocurrency-friendly marketplace for the dark web. Built on Laravel. If you made any kind of improvements, please consider making a pull request.
 
 ![](https://github.com/nomiac-mobile/peralta/blob/master/demo/website.jpg)
 
