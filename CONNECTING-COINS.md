@@ -1,122 +1,97 @@
-Download Bitcoin core from official https://bitcoin.org/en/bitcoin-core/
+ Setting Up and Running a Bitcoin Full Node: A Comprehensive Guide
 
-after instlation run your bitcoind 
+Introduction:
+Welcome to our comprehensive guide on setting up and running a Bitcoin full node! In this blog, we'll walk you through the step-by-step process of installing Bitcoin Core, configuring your node, and synchronizing it with the blockchain. By the end of this guide, you'll have a fully functional Bitcoin full node up and running. Let's dive in!
 
-bitcoind & 
+1. Downloading Bitcoin Core:
+To get started, head over to the official Bitcoin website (https://bitcoin.org/en/bitcoin-core/) and download the latest version of Bitcoin Core suitable for your operating system.
 
-it will create new directiry in root .bitcoind 
+2. Configuring Bitcoin Core:
+Once you've successfully installed Bitcoin Core, it's time to configure it to suit your requirements. Follow these steps to create the necessary configuration file:
 
+a. Run bitcoind:
+After installation, open your terminal or command prompt and enter the following command to start the bitcoind process in the background:
+```
+bitcoind &
+```
+
+b. Creating the Configuration File:
+Next, navigate to the .bitcoind directory in your root folder and create the bitcoin.conf file using the nano text editor:
+```
 cd ~/.bitcoind/
- then create bitcoin.conf
-
 nano bitcoin.conf
+```
 
-
-** Add config to bitcoin.conf file ** 
-
+c. Adding Configurations:
+Inside the bitcoin.conf file, paste the following configurations:
+```
 rpcuser=nodeuser
 rpcpassword=nodepassword
 testnet=1
 rpcport=8332
 rpcallowip=127.0.0.1
 server=1
+```
 
+3. Restarting Bitcoind:
+To apply the new configurations, you'll need to restart bitcoind. Simply execute the following command:
+```
+bitcoind stop
+bitcoind
+```
 
-and restart bitcoind 
-
-
-test with curl 
-
-
-
+4. Testing with Curl:
+You can test your setup using Curl to interact with the Bitcoin node. Run the following command:
+```
 curl --user nodeuser:nodepassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getnewaddress", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8332/ -w '%{http_code}\n'
-if it works changes rpcuser and rpcpassword in .env file for bitcoin 
+```
+If it works correctly, make sure to change the rpcuser and rpcpassword in the .env file for Bitcoin.
 
+5. Adding the Bitcoin Personal Package Archive (PPA):
+To access the latest updates for the Bitcoin repository, you'll need to add the Bitcoin Personal Package Archive (PPA). PPA is a software repository for Ubuntu users that provides verified and approved software installations.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-You have to add Bitcoin personal Package Archive (PPA) 
-
+Execute the following commands in the terminal to add the repository and get the updates:
+```
 sudo apt-add-repository ppa:bitcoin/bitcoin
-
-Note: Personal Package Archive (PPA) are software repositories designed for Ubuntu users. PPA is like a play store for Android users. All the software that are verified and allowed to install is available in PPA.
-
-Adding the repository needs user authentication, so you might be asked to provide a password to authenticate the request. You will be prompted on the terminal to press enter, just press enter.
-
-Use the below command to get the updates to the Bitcoin repository just added.
-
 sudo apt-get update
+```
 
-You can install BTC full node with the combination of GUl ( Graphical user interface ) or terminal or both. 
+6. Installing Bitcoin Full Node:
+Now, you're ready to install the Bitcoin full node using the terminal option. Choose from the following installation options based on your preference:
+- For full node with only GUI: `sudo apt-get install bitcoin-qt`
+- For full node with only Terminal: `sudo apt-get install bitcoind`
+- For full node with both GUI & Terminal: `sudo apt-get install bitcoin-qt bitcoind`
 
-sudo apt-get install bitcoin-qt → Use this for the full node with only GUI 
+7. Running the Bitcoin Node:
+After a successful installation, all Bitcoin files will be located in the lib directory. To run the Bitcoin node, simply use the `bitcoind` command in the terminal.
 
-sudo apt-get install bitcoind → Use this for the full node with only Terminal sudo apt-get install bitcoin-qt bitcoind → Use this for the full node with both GUI & Terminal  
-
-Please use the installation with the terminal option to follow the rest of the article as I have used terminal commands for illustration throughout this article. 
-
-After the successful installation, you will see all the bitcoin files on the lib directory. Running the Bitcoin node:  Use bitcoind to run the Bitcoin node. 
-
-To check available options type bitcoind --help on the terminal.
-
-It is advised to add the config file in the path  ~/.bitcoin/bitcoin.conf
-
-Testnet sample code for the config file is
-
-#server=1  // enable this for main net and commant testnet
-
-testnet=1   // un commant this to run the node on test net and commant server
-
-deamon=1 // this is used to run the node in background
-
-#rpcbind=0.0.0.0:18332 
-
+8. Configuring the Testnet:
+It's recommended to create a config file at ~/.bitcoin/bitcoin.conf for the Bitcoin node. Here's a sample configuration for the testnet:
+```
+#server=1 // enable this for main net and comment testnet
+testnet=1 // uncomment this to run the node on testnet and comment server
+daemon=1 // this is used to run the node in the background
+#rpcbind=0.0.0.0:18332
 rpcuser=username
-
 rpcpassword=Password
-
 rpcallowip=0.0.0.0/0
-
-rpcallowip=custom ip address
-
+rpcallowip=custom_ip_address
 #rpcport=54543
+walletnotify=/home/transaction.sh %s
+```
 
-walletnotify=/home/transaction.sh %s 
+9. Synchronizing the Node:
+Before using your node, you need to synchronize it with all transactions and blocks. This process may take several days, depending on the data size to be synchronized.
 
-You should specify configuration params in a config file, like the node is a test/main net, setting the password and username, IP to access the wallet, etc
+10. Verifying the Node:
+You can access the wallet within the server using the `bitcoin-cli` tool. For example, to check your wallet balance, use the command `bitcoin-cli getbalance`.
 
-walletnotify option is used to receive the information when there is a change in the wallet, like a new deposit to the wallet. It returns the transaction in key %s. 
-
-transaction.sh file is a custom file which written to save the Id’s, as below 
-
-#!/bin/sh
-
-echo $1 >> ~/tran.txt
-
-tran.txt will have the transaction Id’s affected the wallet. 
-
-You have to synchronize your node with all the transactions and blocks before starting to use it. This might take days depending on the size of data to be synchronized.
-
-After the full synchronization, you are ready for the actual process of node wallet i.e validating the blocks, depositing and withdrawal process. 
-
-You can access the wallet within the server itself using the bitcoin-cli. You can use this option for quick verification of successful node installation.
-
-For example, to get the balance type bitcoin-cli getbalance it returns the balance of the wallet. 
+Conclusion:
+Congratulations! You have successfully set up and configured your Bitcoin full node. With your fully synchronized node, you are now ready to validate blocks, perform transactions, and actively participate in the Bitcoin network. Happy Bitcoin-ing!
 
 
-You can use bitcoin-cli commands to get a list of transactions, transaction etc on the Bitcoin node. 
+Complete Guide: Installing Monero Core Node with JSON-RPC on Ubuntu
+
+https://darkwebdeveloper.com/complete-guide-installing-monero-core-node-with-json-rpc-on-ubuntu/
 
 
