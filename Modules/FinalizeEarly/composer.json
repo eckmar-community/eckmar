@@ -1,0 +1,25 @@
+{
+    "name": "nwidart/finalizeearly",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\FinalizeEarly\\Providers\\FinalizeEarlyServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\FinalizeEarly\\": ""
+        }
+    }
+}
