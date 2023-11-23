@@ -122,6 +122,9 @@ return [
         'dash' => [
             'yQgr9ix7L7JuA5NeZdj3yux7sNXCX3H843'
         ],
+        'xmr' => [
+            '45ry3PiKunpfk1mmacicjohiSjp3TSPg5iVJAfmiYWGoBJH8T3U2MpG1sHfiYkVKo8MTZiiY22JKbG3YaKagujYBQPCHX5G'
+        ],
         'stb' => [
             'marketSTB',
             'market2STB'
