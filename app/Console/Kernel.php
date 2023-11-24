@@ -28,15 +28,10 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // Schedule to delete old messages every old days
-    //    $schedule -> command(DeleteOldMessages::class, ['days' => config('marketplace.days_old_messages')])
-    //                ->days(config('marketplace.days_old_messages'));
+    //    $schedule -> command(DeleteOldMessages::class, ['days' => config('marketplace.days_old_messages')])->days(config('marketplace.days_old_messages'));
 
-        // Make the command for releasing purchases runs each X days
-        $schedule -> command(ReleasePurchasesCommand::class, ['days' => config('marketplace.days_old_purchases')])
-                    ->days(config('marketplace.days_old_purchases'));
-
-        // Run completing command for purchases every defined number of days
-        $schedule -> command(ReleasePurchasesCommand::class, ['days' => config('marketplace.days_old_purchases')])->daily();
+    $schedule -> command(CompletePurchaseCommand::class) -> days(config('marketplace.days_complete'));
+    $schedule -> command(ReleasePurchasesCommand::class, ['days' => config('marketplace.days_old_purchases')])->daily();
 
     }
 
