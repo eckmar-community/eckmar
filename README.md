@@ -6,7 +6,7 @@
 
 ![](https://github.com/nomiac-mobile/peralta/blob/master/demo/eckmar-background.jpg)
 
-Eckmar is an open-source, cryptocurrency-friendly marketplace for the dark web. Built on Laravel. If you made any kind of improvements, please consider making a pull request.
+Eckmar is an open-source, cryptocurrency-friendly marketplace built on Laravel. If you made any kind of improvements, please consider making a pull request.
 
 ![](https://github.com/nomiac-mobile/peralta/blob/master/demo/website.jpg)
 
